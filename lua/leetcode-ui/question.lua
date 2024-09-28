@@ -71,7 +71,7 @@ function Question:path()
         return self.file:absolute(), true
     end
 
-    local fn = ("%s.%s%s.%s"):format(self.q.frontend_id, self.q.title_slug, alt, lang.ft)
+    local fn = ("%s-%s%s.%s"):format(self.q.frontend_id, self.q.title_slug, alt, lang.ft)
     self.file = config.storage.home:joinpath(fn)
     local existed = self.file:exists()
 
